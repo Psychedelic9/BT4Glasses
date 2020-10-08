@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="entity"
+            type="com.psychedelic9.bt4glasses.data.entity.BTResultEntity" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bt_scan_item_bg">
+
+        <ImageView
+            android:id="@+id/bt_scan_item_iv_type_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/bt_scan_item_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/text_black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bt_scan_item_tv_content"
+            app:layout_constraintLeft_toRightOf="@+id/bt_scan_item_iv_type_icon"
+            app:layout_constraintTop_toTopOf="@+id/bt_scan_item_iv_type_icon"
+            tools:text="蓝牙名称"
+            android:text="@{entity.deviceName}"
+            />
+
+        <TextView
+            android:id="@+id/bt_scan_item_tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_gray"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:text="@{entity.deviceMac}"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_scan_item_iv_type_icon"
+            app:layout_constraintLeft_toLeftOf="@+id/bt_scan_item_tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/bt_scan_item_tv_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
